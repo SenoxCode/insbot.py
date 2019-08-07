@@ -1,5 +1,7 @@
 from InstagramAPI import InstagramAPI
 import time
+import pyfiglet
+from pip._vendor.distlib.compat import raw_input
 
 ##########
 ##########
@@ -10,10 +12,14 @@ password = "password" #Change the password in the quotation marks to your Instag
 ##########
 ##########
 
-
+pythonname = "insbot.py"
+version = 1.1
 
 
 time.sleep(0.3)
+ascii_banner = pyfiglet.figlet_format(pythonname + " " +  str(version))
+print(ascii_banner)
+time.sleep(1)
 print("\ninsbot.py 1.0 by Senox")
 time.sleep(0.3)
 print("https://github.com/SenoxCode\n\n\n")
@@ -26,26 +32,75 @@ api.login()
 print("\n\n\n\n\n\nLogged in as " + name + "\n")
 
 
-
 popularaccounts = [6860189, 325734299, 305701719, 451573056, 5823711452, 787132, 11830955, 247944034, 232192182, 7719696, 25025320, 9365072543, 217338092, 13336763,187619120, 1574083, 182196805,748381723,19077223,  22686243]
-def followpop():
 
+
+
+def followbot():
     while True:
+        account = 1
         for x in popularaccounts:
             api.follow(x)
             xstring = str(x)
-            print("Following UserID " + xstring + "...")
+            print("Following UserID " + xstring + "..." + " [" +  str(account) +  "/20]")
             time.sleep(4)
+
+            if account < 20:
+                account += 1
+            else:
+                account = 1
+
+
+
+
         print("\nWaiting 60 seconds...\n")
         time.sleep(60)
+
         for x in popularaccounts:
             api.unfollow(x)
             xstring = str(x)
-            print("Unfollowing UserID " + xstring + "...")
+            print("Unfollowing UserID " + xstring + "..." + " [" +  str(account) +  "/20]")
             time.sleep(4)
+            if account < 20:
+                account += 1
+            else:
+                account = 1
+
         print("\nWaiting 60 seconds...\n")
         time.sleep(60)
 
+def likebot():
+    while True:
+        api.getHashtagFeed("like4like", '')
+        tmp = api.LastJson
+        for item in tmp["items"]:
+            api.like(item["id"])
+            print("Liked MediaID " + item["id"])
+            time.sleep(3)
 
-followpop()
+
+
+print("Choose an option:\n[0] EXIT\n[1] FOLLOWER BOT\n[2] LIKE BOT\n[3] Coming soon...")
+option = raw_input()
+
+
+
+
+
+if option == "0":
+    print("\nExiting...")
+    time.sleep(3)
+elif option == "1":
+    print("\nStarting bot...")
+    print("Press CTRL+C to stop\n")
+    time.sleep(3)
+    followbot()
+elif option == "2":
+    print("\nStarting bot...")
+    print("Press CTRL+C to stop\n")
+    time.sleep(3)
+    likebot()
+else:
+    print("ERROR: INVALID NUMBER...")
+    time.sleep(3)
 
