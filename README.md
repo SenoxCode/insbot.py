@@ -1,6 +1,8 @@
 # insbot.py
 This bot increase your Instagram followers easy and fast.
 
+https://youtu.be/WzSClz6-uwY (Here's a video how to install)
+
 Installing on Linux:
 1. "git clone https://github.com/SenoxCode/insbot.py"
 2. "cd insbot.py"
