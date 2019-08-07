@@ -4,8 +4,8 @@ import time
 ##########
 ##########
 
-name = "name"
-password = "password"
+name = "name"   #Change the name in the quotation marks to your Instagram name
+password = "password" #Change the password in the quotation marks to your Instagram password
 
 ##########
 ##########
@@ -48,3 +48,4 @@ def followpop():
 
 
 followpop()
+
