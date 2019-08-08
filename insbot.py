@@ -6,8 +6,8 @@ from pip._vendor.distlib.compat import raw_input
 ##########
 ##########
 
-name = "name"   #Change the name in the quotation marks to your Instagram name#
-password = "password" #Change the password in the quotation marks to your Instagram password#
+name = "name"   #Change the name in the quotation marks to your Instagram name
+password = "password" #Change the password in the quotation marks to your Instagram password
 
 ##########
 ##########
@@ -31,7 +31,6 @@ api = InstagramAPI(name, password)
 api.login()
 print("\n\n\n\n\n\nLogged in as " + name + "\n")
 
-
 popularaccounts = [6860189, 325734299, 305701719, 451573056, 5823711452, 787132, 11830955, 247944034, 232192182, 7719696, 25025320, 9365072543, 217338092, 13336763,187619120, 1574083, 182196805,748381723,19077223,  22686243]
 
 
@@ -43,7 +42,7 @@ def followbot():
             api.follow(x)
             xstring = str(x)
             print("Following UserID " + xstring + "..." + " [" +  str(account) +  "/20]")
-            time.sleep(4)
+            time.sleep(3)
 
             if account < 20:
                 account += 1
@@ -60,7 +59,7 @@ def followbot():
             api.unfollow(x)
             xstring = str(x)
             print("Unfollowing UserID " + xstring + "..." + " [" +  str(account) +  "/20]")
-            time.sleep(4)
+            time.sleep(3)
             if account < 20:
                 account += 1
             else:
@@ -103,4 +102,3 @@ elif option == "2":
 else:
     print("ERROR: INVALID NUMBER...")
     time.sleep(3)
-
