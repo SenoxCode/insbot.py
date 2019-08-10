@@ -3,6 +3,9 @@ import time
 import pyfiglet
 from pip._vendor.distlib.compat import raw_input
 
+####### I don't take any responsibility for damage on your account ######
+####### CODED BY https://github.com/SenoxCode ######
+
 ##########
 ##########
 
@@ -12,8 +15,10 @@ password = "password" #Change the password in the quotation marks to your Instag
 ##########
 ##########
 
+
+
 pythonname = "insbot.py"
-version = 1.1
+version = 1.2
 
 
 time.sleep(0.3)
@@ -77,9 +82,34 @@ def likebot():
             print("Liked MediaID " + item["id"])
             time.sleep(3)
 
+def likeandunlikebot():
+    while True:
+        loop = 0
+        likedpictures = []
+        api.getHashtagFeed("like4like", '')
+        tmp = api.LastJson
+        for item in tmp["items"]:
+            api.like(item["id"])
+            print("Liked MediaID " + item["id"])
+            loop = loop + 1
+            time.sleep(5)
+            likedpictures.append(item["id"])
+
+            if loop == 10:
+                loop = 0
+                for i in likedpictures:
+                    api.unlike(i)
+                    print("Unliked MediaID " + i)
+                    time.sleep(3)
+                likedpictures.clear()
 
 
-print("Choose an option:\n[0] EXIT\n[1] FOLLOWER BOT\n[2] LIKE BOT\n[3] Coming soon...")
+
+
+
+
+
+print("Choose an option:\n[0] EXIT\n[1] FOLLOWER BOT\n[2] LIKE BOT\n[3] LIKE & UNLIKE BOT")
 option = raw_input()
 
 
@@ -99,6 +129,13 @@ elif option == "2":
     print("Press CTRL+C to stop\n")
     time.sleep(3)
     likebot()
+elif option == "3":
+    print("\nStarting bot...")
+    print("Press CTRL+C to stop\n")
+    time.sleep(3)
+    likeandunlikebot()
+
 else:
     print("ERROR: INVALID NUMBER...")
     time.sleep(3)
+
