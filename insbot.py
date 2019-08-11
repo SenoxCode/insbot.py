@@ -57,8 +57,8 @@ def followbot():
 
 
 
-        print("\nWaiting 60 seconds...\n")
-        time.sleep(60)
+        print("\nWaiting 120 seconds...\n")
+        time.sleep(120)
 
         for x in popularaccounts:
             api.unfollow(x)
