@@ -92,10 +92,10 @@ def likeandunlikebot():
             api.like(item["id"])
             print("Liked MediaID " + item["id"])
             loop = loop + 1
-            time.sleep(5)
+            time.sleep(4)
             likedpictures.append(item["id"])
 
-            if loop == 10:
+            if loop == 25:
                 loop = 0
                 for i in likedpictures:
                     api.unlike(i)
