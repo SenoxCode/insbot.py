@@ -2,6 +2,7 @@
 This bot increase your Instagram followers easy and fast.
 
 Installing on Linux:
+```
 1. "git clone https://github.com/SenoxCode/insbot.py"
 2. "cd insbot.py"
 3. "pip install -r requirements.txt
@@ -11,8 +12,10 @@ Installing on Linux:
 7. *STRG+S*
 8. Close this file and go to the terminal again
 9. "python insbot.py"
+```
 
 Installing on Windows:
+```
 1. Download the ZIP (https://github.com/SenoxCode/insbot.py/archive/master.zip)
 2. Open the ZIP and put the folder on your desktop
 3. Open the folder and rightclick "insbot.py" and select "Open with..."
@@ -21,6 +24,7 @@ Installing on Windows:
 6. Save the file and close it
 7. Open the "install (Windows only).bat" file (ONLY FIRST TIME TO INSTALL THE REQUIREMENTS)
 8. Open the "start (Windows only).bat"
+```
 
 You're finished now. Now there will come some errors at the begin of the line, but don't matter, it will still work. I am trying to fix this in the next version.
 
