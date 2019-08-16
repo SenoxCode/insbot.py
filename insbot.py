@@ -15,8 +15,6 @@ password = "password" #Change the password in the quotation marks to your Instag
 ##########
 ##########
 
-
-
 pythonname = "insbot.py"
 version = 1.2
 
@@ -25,7 +23,7 @@ time.sleep(0.3)
 ascii_banner = pyfiglet.figlet_format(pythonname + " " +  str(version))
 print(ascii_banner)
 time.sleep(1)
-print("\n" + pythonname + " " + str(version) + " by Senox")
+print("\ninsbot.py 1.0 by Senox")
 time.sleep(0.3)
 print("https://github.com/SenoxCode\n\n\n")
 time.sleep(0.3)
@@ -34,13 +32,18 @@ print("Trying to login...")
 
 api = InstagramAPI(name, password)
 api.login()
+print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+
 print("\n\n\n\n\n\nLogged in as " + name + "\n")
 
 popularaccounts = [6860189, 325734299, 305701719, 451573056, 5823711452, 787132, 11830955, 247944034, 232192182, 7719696, 25025320, 9365072543, 217338092, 13336763,187619120, 1574083, 182196805,748381723,19077223,  22686243]
 
-
-
 def followbot():
+    print("\n\n\nThis bot will follow & unfollow popular accounts to get more followers on your account.")
+    time.sleep(5)
+    print("\nStarting bot...")
+    print("Press CTRL+C to stop\n")
+    time.sleep(3)
     while True:
         account = 1
         for x in popularaccounts:
@@ -48,6 +51,7 @@ def followbot():
             xstring = str(x)
             print("Following UserID " + xstring + "..." + " [" +  str(account) +  "/20]")
             time.sleep(3)
+
 
             if account < 20:
                 account += 1
@@ -74,15 +78,25 @@ def followbot():
         time.sleep(60)
 
 def likebot():
+    print("\n\n\nThis bot will like other pictures to get you more likes.")
+    time.sleep(5)
+    print("\nStarting bot...")
+    print("Press CTRL+C to stop\n")
+    time.sleep(3)
     while True:
         api.getHashtagFeed("like4like", '')
         tmp = api.LastJson
         for item in tmp["items"]:
             api.like(item["id"])
             print("Liked MediaID " + item["id"])
-            time.sleep(6)
+            time.sleep(3)
 
 def likeandunlikebot():
+    print("\n\n\nThis bot will like & unlike pictures to get more likes on your account.")
+    time.sleep(5)
+    print("\nStarting bot...")
+    print("Press CTRL+C to stop\n")
+    time.sleep(3)
     while True:
         loop = 0
         likedpictures = []
@@ -92,7 +106,7 @@ def likeandunlikebot():
             api.like(item["id"])
             print("Liked MediaID " + item["id"])
             loop = loop + 1
-            time.sleep(6)
+            time.sleep(5)
             likedpictures.append(item["id"])
 
             if loop == 25:
@@ -100,7 +114,7 @@ def likeandunlikebot():
                 for i in likedpictures:
                     api.unlike(i)
                     print("Unliked MediaID " + i)
-                    time.sleep(6)
+                    time.sleep(3)
                 likedpictures.clear()
 
 
@@ -120,19 +134,10 @@ if option == "0":
     print("\nExiting...")
     time.sleep(3)
 elif option == "1":
-    print("\nStarting bot...")
-    print("Press CTRL+C to stop\n")
-    time.sleep(3)
     followbot()
 elif option == "2":
-    print("\nStarting bot...")
-    print("Press CTRL+C to stop\n")
-    time.sleep(3)
     likebot()
 elif option == "3":
-    print("\nStarting bot...")
-    print("Press CTRL+C to stop\n")
-    time.sleep(3)
     likeandunlikebot()
 
 else:
