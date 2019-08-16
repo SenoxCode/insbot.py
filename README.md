@@ -28,3 +28,4 @@ Installing on Windows:
 
 You're finished now. Now there will come some errors at the begin of the line, but don't matter, it will still work. I am trying to fix this in the next version.
 
+I DO NOT TAKE RESPONSIBILITY FOR ANY DAMAGE
