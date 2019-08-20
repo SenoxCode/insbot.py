@@ -51,7 +51,7 @@ def followbot(accountlist):
             api.follow(x)
             xstring = str(x)
             print("Following UserID " + xstring + "..." + " [" +  str(account) +  "/20]")
-            time.sleep(3)
+            time.sleep(5)
 
 
             if account < 20:
@@ -90,7 +90,7 @@ def likebot():
         for item in tmp["items"]:
             api.like(item["id"])
             print("Liked MediaID " + item["id"])
-            time.sleep(3)
+            time.sleep(5)
 
 def likeandunlikebot():
     print("\n\n\nThis bot will like & unlike pictures to get more likes on your account.")
